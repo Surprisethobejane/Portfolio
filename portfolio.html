@@ -53,6 +53,42 @@ body::before {
   z-index: 9999;
 }
 
+/* Custom Cursor */
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.15s var(--ease), border-color 0.2s var(--ease);
+  transform: translate(-50%, -50%);
+}
+
+.cursor.hover {
+  transform: translate(-50%, -50%) scale(2);
+  border-color: var(--accent);
+  background: rgba(198, 80, 42, 0.1);
+}
+
+.cursor.link-hover {
+  transform: translate(-50%, -50%) scale(1.5);
+  border-color: var(--accent);
+  border-width: 2px;
+}
+
+/* Hide default cursor on non-touch devices */
+@media (hover: hover) {
+  body {
+    cursor: none;
+  }
+  
+  * {
+    cursor: none !important;
+  }
+}
+
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 button { cursor: pointer; border: none; background: none; font: inherit; }
@@ -1027,115 +1063,115 @@ footer {
 const projects = [
   {
     id: 'braida-ready',
-    title: 'Braida Ready',
+    title: 'Braida Ready: Brand Identity Design',
     category: 'Brand Identity',
-    description: 'A premium, modern haircare brand specializing in high-quality, pre-styled braiding extensions for effortless, culturally-rooted beauty.',
+    description: 'A full brand identity system for a real haircare startup — logo, typography, colour, pattern, and applications across print, digital, and merchandise.',
     color: '#2e1c14',
     accent: '#e2725b',
-    thumb: '',
-    heroImg: '',
-    mockup1: '',
-    mockup2: '',
-    mockup3: '',
-    context: 'The client required a cohesive brand identity for a startup offering pre-stretched, pre-sectioned braiding hair to modernize and simplify traditional hair-braiding rituals.',
-    goal: 'To establish Braida Ready as a trusted, premium leader that empowers women by saving time without compromising cultural authenticity.',
-    role: 'I served as the lead designer, responsible for the logo, visual identity, typography, and packaging mockups.',
-    concept: 'The identity centers on "Modern Heritage," merging clean, contemporary aesthetics with African-inspired patterns. The "B" icon features a "split" negative-space "R," symbolizing the essential act of hair sectioning.',
-    inspiration: 'The design was influenced by the rhythmic geometry of traditional African weaving patterns and the minimalist, bold approach of modern high-end cosmetic and lifestyle brands.',
-    typog: 'The primary typeface is Kaio, a modern sans-serif that balances approachability with a clean, professional edge. Montserrat provides functional support for body text.',
+    thumb: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&q=80',
+    heroImg: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=1600&q=80',
+    mockup1: 'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=800&q=80',
+    mockup2: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=800&q=80',
+    mockup3: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800&q=80',
+    context: 'Braida Ready is a startup offering pre-stretched, pre-sectioned, and pre-oiled braiding hair designed to modernise the braiding ritual without stripping it of its cultural meaning. The brief required a full brand identity system including logo, typography, colour, pattern, photography direction, and applications across digital and print.',
+    goal: 'To position Braida Ready as a trusted, premium haircare brand that empowers women by saving time without compromising cultural authenticity. The brand needed to feel confident and modern while staying deeply rooted in heritage.',
+    role: 'Lead designer across the entire identity system: brand strategy, logo design, icon development, typography system, colour palette, pattern design, photography guidelines, and brand applications across packaging, social media, print, and merchandise.',
+    concept: 'The entire brand is anchored by a single brand promise: "Less Time, More Tradition." The logo is a bold "B" form with a custom "R" carved into the negative space, referencing both the brand name and the act of hair sectioning. The curved R suggests movement and readiness. Every design decision traces back to the tension between speed and heritage, modern and rooted.',
+    inspiration: 'The geometric brand pattern draws directly from traditional African weaving rhythms, reframed through a clean, minimal lens. The photography direction is built around three words: Empowered, Effortless, Rooted. The brand\'s visual language was shaped by high-end global cosmetic and lifestyle brands while keeping its cultural specificity intact.',
+    typog: 'Kaio is the sole typeface across the entire brand. It is clean and modern with just enough personality to feel distinct without being loud. Seven weights from Light to Bold create a full typographic hierarchy: Semi Bold for headlines, Medium for subheadlines, and Regular or Light for body text. All wordmark applications must be set in all caps and always paired with the icon.',
     colors: [
       { hex: '#e2725b', label: 'Near Red' },
       { hex: '#f9f1e7', label: 'Creamy White' },
-      { hex: '#f2d3c9', label: 'Peachy-Pink' },
+      { hex: '#f2d3c9', label: 'Peachy Pink' },
       { hex: '#2e1c14', label: 'Dark Brown' },
     ],
-    layout: 'A clean, spacious layout strategy was used to ensure the brand feels premium, utilizing geometric patterns as accents to maintain a rhythmic visual flow.',
-    worked: 'The logo icon effectively integrates brand initials while nodding to the product\'s function, creating a memorable, versatile mark that scales well across diverse applications.',
-    improve: 'I would further expand the custom pattern library to include variations specific to different hair textures or product lines for even greater visual variety.',
+    layout: 'Near Red leads always, followed by Creamy White, then the supporting tones. The geometric pattern adds depth and rhythm across packaging and print without overpowering the logo or key content. The brand was applied across a full range of touchpoints including business cards, out-of-home posters, social media, flyers, t-shirts, caps, tote bags, and a car wrap.',
+    worked: 'The logo icon is the strongest element in the system. The negative space R does two things at once: it spells the brand name and references the product function. It is instantly readable, scales from 32px favicon to billboard size, and gives the brand a mark that feels considered rather than generic.',
+    improve: 'The pattern library currently has one base geometric pattern. Expanding it to include variations specific to different hair textures or product lines would give the brand more visual range and allow for better differentiation across the product range as it grows.',
   },
   {
-    id: 'flux',
-    title: 'Flux Festival',
-    category: 'Poster Series',
-    description: 'A bold poster campaign for an experimental music and arts festival.',
-    color: '#0C0A1A',
-    accent: '#8B6FE8',
-    thumb: '',
-    heroImg: '',
-    mockup1: '',
-    mockup2: '',
-    mockup3: '',
-    context: 'A self-initiated poster series designed as a campaign for a fictional experimental music festival taking place across three nights.',
-    goal: 'Capture the disorienting, electric energy of avant-garde music and performance in a printed format. Each poster needed to stand alone while working as part of a coherent series.',
-    role: 'Art direction, poster design, typography, print production specs',
-    concept: 'Flux explores the instability of sound — how it can bend, layer, and distort. Visually this translates to layered transparencies, warped type, and unstable grids that feel like they\'re in motion even when static.',
-    inspiration: 'Early rave flyers, Neville Brody\'s Face magazine covers, and the visual language of oscilloscopes and frequency analysers.',
-    typog: 'Abandoned a traditional type hierarchy. All three posters use a single weight at dramatically different sizes, creating tension through scale rather than style.',
+    id: 'fynbos',
+    title: 'ROTOCON 30 Under 30: Wine Label Design',
+    category: 'Packaging & Label Design',
+    description: 'A competition entry for ROTOCON\'s 30 Under 30 — a print-ready wine label celebrating South African identity through minimalism and premium finishing techniques.',
+    color: '#4A0D12',
+    accent: '#D4AF37',
+    thumb: 'https://images.unsplash.com/photo-1474722883778-792e7fb1f4b4?w=700&q=80',
+    heroImg: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1600&q=80',
+    mockup1: 'https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=800&q=80',
+    mockup2: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=800&q=80',
+    mockup3: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+    context: 'Designed for the ROTOCON 30 Under 30 wine label design competition in partnership with WineLand Media. The brief required a unique, print-ready label demonstrating an understanding of modern finishing techniques including foil stamping, embossing, spot UV varnishing, and die-cutting, alongside strong conceptual thinking and market awareness.',
+    goal: 'To design a premium, approachable wine label targeting young adults aged 21 to 30 who are transitioning into wine for the first time. Research showed this demographic selects wine based almost entirely on visual appeal rather than technical wine knowledge, making shelf impact and brand clarity the primary design objectives.',
+    role: 'Sole designer across the full project lifecycle: primary research, competitor analysis, user persona development, concept exploration across three distinct directions, design iteration, final label execution across two wine variants (Chenin Blanc and Pinot Noir), 3D mockup production, and print specification documentation.',
+    concept: 'The label strips everything back to one central image: the Cape Sugarbird perched on a protea, the defining creature of the Western Cape fynbos biome. A single illustration does all the storytelling. The brand name FYNBOS sits below it in a wide-tracked modern sans-serif, and the label breathes. Cream signals the freshness of the Chenin Blanc. Deep wine red signals the body of the Pinot Noir. The colour handles wine differentiation so the layout does not have to.',
+    inspiration: 'Three concepts were explored before arriving at the final direction: a Refraction concept using geometric prism facets inspired by light through glass, a Golden Hour concept using warm gradients and horizon forms, and the final Fynbos Bird concept grounded in South African ecological identity. A moodboard built around Cape Sugarbird photography, fynbos flora, earth tone palettes, and contemporary minimal wine labels from Bonny Doon Vineyard and FIOL Prosecco informed the final visual language.',
+    typog: 'The original serif typeface used in early iterations including the Cape Longtail and Oeil Blanc concepts was replaced following lecturer and client feedback. A modern, wide-tracked sans-serif was chosen to achieve a cleaner, more contemporary feel aligned with the 21 to 30 target market. Type hierarchy is minimal: FYNBOS leads at full scale, the wine variety sits quietly below, and production details recede entirely into the background.',
     colors: [
-      { hex: '#0C0A1A', label: 'Deep Violet' },
-      { hex: '#8B6FE8', label: 'Electric Purple' },
-      { hex: '#E8C84A', label: 'Signal Yellow' },
-      { hex: '#F0EDE5', label: 'Off White' },
+      { hex: '#F9F1E7', label: 'Cream (Chenin Blanc)' },
+      { hex: '#4A0D12', label: 'Deep Wine (Pinot Noir)' },
+      { hex: '#D4AF37', label: 'Gold (Foil Accent)' },
+      { hex: '#000000', label: 'Black' },
     ],
-    layout: 'Each poster breaks the grid differently: one is strictly columnar, one radial, one refuses any grid at all. The instability is the message.',
-    worked: 'The series has a strong visual tension and reads unmistakably as a campaign. The typographic experiments produced several genuinely surprising results.',
-    improve: 'The third poster in the series is the weakest — I overworked it. Simplifying the composition by 40% would strengthen the whole series.',
+    layout: 'Intentional white space is the entire layout strategy. Nothing competes for attention. The bird illustration sits centred on the label, the FYNBOS wordmark anchors below it, and all supporting information is set at a significantly reduced scale. The design went through multiple named iterations before landing on the final system, with each round of feedback tightening the concept and improving brand clarity.',
+    worked: 'The Cape Sugarbird gives the label a strong, singular identity that is instantly memorable and deeply specific to South Africa. The two-variant colour system works cleanly across both wine types while keeping the brand immediately recognisable. The design also renders exceptionally well in 3D mockup form, which matters significantly for a competition submission judged on both concept and production viability.',
+    improve: 'The finishing techniques could be pushed further. The current design is well suited to foil stamping on the bird illustration and embossing on the FYNBOS wordmark, but more experimental die-cutting shapes for the label outline itself were not fully explored. An unconventional label shape would demonstrate a deeper understanding of what ROTOCON\'s advanced capabilities actually make possible.',
   },
   {
-    id: 'sol',
-    title: 'Sol Ceramics',
-    category: 'Branding & Packaging',
-    description: 'Earth-rooted brand and packaging system for a craft ceramics studio.',
-    color: '#2B1F15',
-    accent: '#D4956A',
-    thumb: '',
-    heroImg: '',
-    mockup1: '',
-    mockup2: '',
-    mockup3: '',
-    context: 'A student project from the Advanced Brand module, developed alongside a ceramics student who provided product photography and real business context.',
-    goal: 'Design an identity and packaging system that reflects the handmade nature of the work without resorting to rustic clichés — warm but rigorous, artisan but not amateur.',
-    role: 'Identity design, packaging system, brand guidelines',
-    concept: 'The central tension in Sol\'s work is between control and accident — you shape the clay, but the kiln decides the final outcome. The identity embraces this: a logotype with deliberate imperfection in the S, paired with a completely precise, gridded label system.',
-    inspiration: 'Japanese craft philosophy (wabi-sabi), the texture of unglazed stoneware, and the typographic rigour of early 20th-century apothecary labels.',
-    typog: 'A hand-drawn wordmark for the logotype, set against Freight Display for all supporting type. The contrast between made and set is the whole point.',
+    id: 'pubg-stand',
+    title: 'PUBG Mobile: Skin Design Competition',
+    category: 'Character & Concept Design',
+    description: 'An Afro-futurist character skin entry for the PUBG Mobile PDP — merging African mysticism, GBV awareness, and the visual language of empowerment.',
+    color: '#0A0A0F',
+    accent: '#D4AF37',
+    thumb: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=700&q=80',
+    heroImg: 'https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=1600&q=80',
+    mockup1: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80',
+    mockup2: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=800&q=80',
+    mockup3: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+    context: 'Created for the PUBG Mobile PDP (Ptopia Design Project) competition. The brief called for an original character skin that goes beyond standard cosmetics and meaningfully represents culture, narrative, and technical design within the PUBG universe.',
+    goal: 'To design a premium, culturally driven character skin that fills a clear gap in the market: authentic African representation in a realistic tactical shooter, executed with enough craft and research to compete at Tencent level.',
+    role: 'Sole designer across all four strategic lenses: creative strategist, cultural researcher, technical art direction, and social advocacy lead.',
+    concept: 'STAND is a futuristic female cyborg inspired by Shuri from the Black Panther franchise. Her digital screen head broadcasts a single word in place of a face, shifting the focus from appearance to voice. The black, gold, and electric blue suit merges Afro-futurist aesthetics with tactical gameplay clarity, representing intelligence, resistance, and controlled power.',
+    inspiration: 'Afro-futurism as defined by Womack and Eshun, the costume design of Ruth E. Carter in Black Panther, feminist media theory by Mulvey and Gill, and the posthuman cyborg theory of Haraway. Competitor analysis of Destiny 2 also informed how mysticism can be embedded in material logic rather than surface decoration.',
+    typog: 'The character name ATHENA and the companion item labels follow PUBG Mobile\'s existing bold, condensed UI typeface system to ensure the skin reads as native to the game world rather than imported from a different visual language.',
     colors: [
-      { hex: '#2B1F15', label: 'Dark Earth' },
-      { hex: '#D4956A', label: 'Terracotta' },
-      { hex: '#F5EDD6', label: 'Raw Linen' },
-      { hex: '#8A7B6A', label: 'Stone' },
+      { hex: '#0A0A0F', label: 'Tactical Black' },
+      { hex: '#D4AF37', label: 'Heritage Gold' },
+      { hex: '#00CFFF', label: 'Electric Blue' },
+      { hex: '#1A1A2E', label: 'Deep Space' },
     ],
-    layout: 'Packaging labels use a strict baseline grid with generous leading. The label format is the same across all products; only content and a single accent colour change.',
-    worked: 'The contrast between the organic logotype and the rigid label system is genuinely interesting and distinctive. The packaging photographs beautifully.',
-    improve: 'I should have developed a broader range of brand touchpoints — especially digital. The identity works on packaging but I didn\'t test it rigorously in motion or web contexts.',
+    layout: 'The character sheet presents front and back views with a companion grenade item, following PUBG Mobile submission conventions. Silhouette clarity was prioritised throughout so the design remains readable at thumbnail scale during live gameplay.',
+    worked: 'The integration of the STAND screen head is the strongest decision in the project. It removes racial features while simultaneously expressing identity, creating a paradox that is both conceptually sharp and visually distinctive. The companion grenade item also successfully extends the narrative beyond the character itself.',
+    improve: 'The Afro-futurism visual language currently leans heavily on colour and technology rather than cultural pattern systems. A deeper exploration of geometric motifs drawn from specific African weaving and beadwork traditions would make the cultural grounding more specific and harder to dismiss as surface level.',
   },
   {
-    id: 'meridian',
-    title: 'Meridian',
-    category: 'Web Design',
-    description: 'A minimal digital magazine focused on climate and design futures.',
-    color: '#0D1A14',
-    accent: '#3DBA7A',
-    thumb: '',
-    heroImg: '',
-    mockup1: '',
-    mockup2: '',
-    mockup3: '',
-    context: 'A personal concept project exploring what a serious editorial publication about climate futures and sustainable design could look like in a digital format.',
-    goal: 'Design a reading experience that feels authoritative, contemporary, and hopeful — countering the visual doom-and-gloom aesthetic common in climate communication.',
-    role: 'UX/UI design, editorial art direction, Webflow build',
-    concept: 'Meridian positions climate design as an intellectual pursuit — rigorous, optimistic, and visually ambitious. The interface prioritises long-form reading, using generous type sizes and considered spacing to encourage depth over speed.',
-    inspiration: 'Monocle, Are.na, the early Quartz website, and the calm authority of The Economist\'s data visualisation.',
-    typog: 'Domaine Display for headlines (a confident, contemporary serif with environmental associations), paired with Untitled Sans for body text — legible at 17px, beautiful at any size.',
+    id: 'masemola',
+    title: 'P. Masemola Foundation: NGO Website',
+    category: 'Web Design & Development',
+    description: 'A fully responsive website designed, built, and deployed for a real South African NGO — live, maintained, and serving youth empowerment communities today.',
+    color: '#3B0764',
+    accent: '#7C3AED',
+    thumb: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=700&q=80',
+    heroImg: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&q=80',
+    mockup1: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80',
+    mockup2: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80',
+    mockup3: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80',
+    context: 'A school brief requiring students to identify a local NGO and use their design skills to boost the organisation\'s digital presence. Our group found the P. Masemola Foundation, a Pretoria-based NGO focused on youth empowerment in underserved rural and township communities through education support, leadership development, and entrepreneurship initiatives. The group handled branding while I took full ownership of the website.',
+    goal: 'To design and build a clear, accessible, and professional web presence that accurately communicates the foundation\'s mission and makes it easier for users, donors, and youth beneficiaries to engage with their work. The site needed to feel credible and trustworthy while remaining warm and approachable for the communities it serves.',
+    role: 'Solo web designer and developer. Responsible for the full pipeline: wireframing in Illustrator, UI design, frontend development in HTML, CSS, and JavaScript using Cursor and Windsurf, deployment on Netlify and GitHub Pages, domain configuration through xneelo, and ongoing maintenance of the live site to this day.',
+    concept: 'The design centres on clarity and impact. The hero leads with "Empowering Youth. Building Futures." — a bold, confident headline that tells you everything in two lines. The homepage is structured around three pillars: Education, Leadership, and Entrepreneurship, giving the foundation\'s work a clear and digestible framework. A "500+ Youth Empowered" stat anchors the hero and immediately establishes credibility.',
+    inspiration: 'South African non-profit digital design, with a focus on organisations that balance authority with warmth. The purple and lavender palette was chosen to feel energetic and forward-looking rather than the typical earthy tones most NGOs default to. The goal was a site that could attract both youth beneficiaries and corporate donors without alienating either.',
+    typog: 'Bold, weighted sans-serif for headlines with strong contrast between the black and purple accent text. Body text kept clean and readable at comfortable sizes. The typographic hierarchy is direct: a powerful headline, a concise subheading, a clear call to action.',
     colors: [
-      { hex: '#0D1A14', label: 'Deep Forest' },
-      { hex: '#3DBA7A', label: 'Emerge Green' },
-      { hex: '#F5F2EA', label: 'Natural White' },
-      { hex: '#B4C4BB', label: 'Sage' },
+      { hex: '#7C3AED', label: 'Foundation Purple' },
+      { hex: '#F5F0FF', label: 'Lavender Background' },
+      { hex: '#F5C518', label: 'Logo Yellow' },
+      { hex: '#1A1A1A', label: 'Ink' },
     ],
-    layout: 'A flexible two-column grid allows editors to compose varied article layouts without custom code. Feature articles break the grid with full-width imagery and pull quotes.',
-    worked: 'The editorial feel is strong and distinctive. The colour system is restrained but immediately communicates environmental seriousness without bleakness.',
-    improve: 'The mobile reading experience was an afterthought and shows. A proper mobile-first redesign of the article template is needed, particularly around image handling.',
+    layout: 'Fully responsive across desktop and mobile. Pages covered: Home, About, Programs, Get Involved, Contact, and Gallery. Navigation includes a dark mode toggle. Built with vanilla HTML, CSS, and JavaScript. Deployed on Netlify with a custom domain registered through xneelo. The site is live at pmasemolafoundation.co.za.',
+    worked: 'The site is live and being actively used by a real organisation. The three-pillar structure makes the foundation\'s work immediately understandable, and the purple palette gives it a visual identity that stands out from typical NGO sites. The ongoing maintenance relationship means this is a genuine client project, not just a school submission.',
+    improve: 'A CMS integration would allow the foundation team to update programs, news, and gallery content independently without needing a developer. A dedicated donate or partner page with a stronger call to action would also improve the site\'s ability to convert visitors into active supporters.',
   },
   {
     id: 'parallax',
@@ -1144,11 +1180,11 @@ const projects = [
     description: 'Identity and campaign for a graduate photography exhibition.',
     color: '#191919',
     accent: '#F0E44A',
-    thumb: '',
-    heroImg: '',
-    mockup1: '',
-    mockup2: '',
-    mockup3: '',
+    thumb: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=700&q=80',
+    heroImg: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1600&q=80',
+    mockup1: 'https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=800&q=80',
+    mockup2: 'https://images.unsplash.com/photo-1512626120412-faf41adb4874?w=800&q=80',
+    mockup3: 'https://images.unsplash.com/photo-1526657782461-9fe13402a841?w=800&q=80',
     context: 'A live brief from the graduating Photography department of the Royal College of Art. The exhibition showcased the work of 24 students across three gallery spaces.',
     goal: 'Create an identity and campaign system flexible enough to represent 24 distinct bodies of work while maintaining visual cohesion across print, digital, and environmental applications.',
     role: 'Art direction, identity design, print campaign, social assets',
@@ -1401,9 +1437,81 @@ function isLight(hex) {
   return (0.299*r + 0.587*g + 0.114*b) > 160;
 }
 
+/* ─── Custom Cursor ─── */
+function initCursor() {
+  // Only initialize on non-touch devices
+  if (!window.matchMedia('(hover: hover)').matches) return;
+  
+  const cursor = document.createElement('div');
+  cursor.className = 'cursor';
+  document.body.appendChild(cursor);
+  
+  let mouseX = 0, mouseY = 0;
+  let cursorX = 0, cursorY = 0;
+  let isHovering = false;
+  
+  // Track mouse movement
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+  
+  // Smooth lagging animation
+  function animate() {
+    const lag = 0.15; // Adjust for more/less lag
+    
+    cursorX += (mouseX - cursorX) * lag;
+    cursorY += (mouseY - cursorY) * lag;
+    
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top = cursorY + 'px';
+    
+    requestAnimationFrame(animate);
+  }
+  animate();
+  
+  // Hover effects for interactive elements
+  const hoverElements = document.querySelectorAll('a, button, .project-card, .nav-link, .contact-link-row, .proj-nav-item, .proj-nav-back, .footer-back-top, .skill-tag');
+  
+  hoverElements.forEach(element => {
+    element.addEventListener('mouseenter', () => {
+      cursor.classList.add('hover');
+      isHovering = true;
+    });
+    
+    element.addEventListener('mouseleave', () => {
+      cursor.classList.remove('hover');
+      isHovering = false;
+    });
+  });
+  
+  // Special hover for links
+  const linkElements = document.querySelectorAll('a');
+  linkElements.forEach(element => {
+    element.addEventListener('mouseenter', () => {
+      cursor.classList.add('link-hover');
+    });
+    
+    element.addEventListener('mouseleave', () => {
+      cursor.classList.remove('link-hover');
+      if (isHovering) cursor.classList.add('hover');
+    });
+  });
+  
+  // Hide cursor when leaving window
+  document.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '0';
+  });
+  
+  document.addEventListener('mouseenter', () => {
+    cursor.style.opacity = '1';
+  });
+}
+
 /* ─── Init ─── */
 renderCards();
 initReveal();
+initCursor();
 </script>
 </body>
 </html>
