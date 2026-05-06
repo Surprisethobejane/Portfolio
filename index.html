@@ -61,7 +61,7 @@ body::before {
   border: 1px solid var(--ink);
   border-radius: 50%;
   pointer-events: none;
-  z-index: 10000;
+  z-index: 10002;
   transition: transform 0.15s var(--ease), border-color 0.2s var(--ease);
   transform: translate(-50%, -50%);
 }
@@ -76,6 +76,12 @@ body::before {
   transform: translate(-50%, -50%) scale(1.5);
   border-color: var(--accent);
   border-width: 2px;
+}
+
+.cursor.lightbox-hover {
+  border-color: var(--white);
+  border-width: 2px;
+  background: rgba(253, 252, 248, 0.15);
 }
 
 /* Hide default cursor on non-touch devices */
@@ -1202,6 +1208,11 @@ const projects = [
     mockup1: 'https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=800&q=80',
     mockup2: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=800&q=80',
     mockup3: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+    mockup4: 'https://images.unsplash.com/photo-1516594915307-709c487a90cf?w=800&q=80',
+    mockup5: 'https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?w=800&q=80',
+    mockup6: 'https://images.unsplash.com/photo-1566995541428-f2246c17cda1?w=800&q=80',
+    mockup7: 'https://images.unsplash.com/photo-1560148218-1a83060f7b32?w=800&q=80',
+    mockup8: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=800&q=80',
     context: 'Designed for the ROTOCON 30 Under 30 wine label design competition in partnership with WineLand Media. The brief required a unique, print-ready label demonstrating an understanding of modern finishing techniques including foil stamping, embossing, spot UV varnishing, and die-cutting, alongside strong conceptual thinking and market awareness.',
     goal: 'To design a premium, approachable wine label targeting young adults aged 21 to 30 who are transitioning into wine for the first time. Research showed this demographic selects wine based almost entirely on visual appeal rather than technical wine knowledge, making shelf impact and brand clarity the primary design objectives.',
     role: 'Sole designer across the full project lifecycle: primary research, competitor analysis, user persona development, concept exploration across three distinct directions, design iteration, final label execution across two wine variants (Chenin Blanc and Pinot Noir), 3D mockup production, and print specification documentation.',
@@ -1445,8 +1456,8 @@ function renderProject(id) {
       <!-- Outcome -->
       <section class="proj-section reveal">
         <p class="proj-section-label">04 — Final Outcome</p>
-        ${p.id === 'braida-ready' && p.mockup8 ? `
-        <!-- Braida Ready 8-Image Gallery (16:9 Layout) -->
+        ${p.mockup8 ? `
+        <!-- 8-Image Gallery (16:9 Layout) -->
         <!-- Row 1: Full-width hero showcase -->
         <div class="proj-images" style="margin-bottom:16px;">
           <div class="proj-img-wrap" style="aspect-ratio:16/9;" onclick="openLightbox('${p.mockup1}', 'Mockup 1 / 8')">
@@ -1624,16 +1635,20 @@ function initCursor() {
   animate();
   
   // Hover effects for interactive elements
-  const hoverElements = document.querySelectorAll('a, button, .project-card, .nav-link, .contact-link-row, .proj-nav-item, .proj-nav-back, .footer-back-top, .skill-tag');
+  const hoverElements = document.querySelectorAll('a, button, .project-card, .nav-link, .contact-link-row, .proj-nav-item, .proj-nav-back, .footer-back-top, .skill-tag, .lightbox');
   
   hoverElements.forEach(element => {
     element.addEventListener('mouseenter', () => {
-      cursor.classList.add('hover');
+      if (element.classList.contains('lightbox') || element.id === 'lightbox') {
+        cursor.classList.add('lightbox-hover');
+      } else {
+        cursor.classList.add('hover');
+      }
       isHovering = true;
     });
     
     element.addEventListener('mouseleave', () => {
-      cursor.classList.remove('hover');
+      cursor.classList.remove('hover', 'lightbox-hover');
       isHovering = false;
     });
   });
